@@ -3,18 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --background: #0F0F1A;
-  --foreground: #ffffff;
+  --bg:      #0D0D1A;
+  --surface: #13132A;
+  --card:    #1A1A35;
+  --border:  rgba(255,255,255,0.07);
+  --accent:  #E94560;
+  --song:    #22C55E;
+  --action:  #EF4444;
+  --dialogue:#3B82F6;
+  --qa:      #F59E0B;
+  --text:    #F1F1F5;
+  --muted:   #8888AA;
 }
+
+* { box-sizing: border-box; }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
+::selection { background: var(--accent); color: white; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 }

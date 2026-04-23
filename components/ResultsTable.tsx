@@ -2,76 +2,98 @@
 
 import { WindowPrediction, LABEL_META, PredictedLabel } from "@/lib/types";
 
-function rowBg(label: PredictedLabel) {
-  return LABEL_META[label]?.bg ?? "transparent";
+function ProbBar({ value, color }: { value: number; color: string }) {
+  const pct = Math.round(value * 100);
+  return (
+    <div className="flex items-center gap-2">
+      <div className="w-14 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: color }} />
+      </div>
+      <span className="font-mono text-xs w-8 text-right" style={{ color }}>
+        {pct}%
+      </span>
+    </div>
+  );
 }
 
 export default function ResultsTable({ rows }: { rows: WindowPrediction[] }) {
   if (!rows.length) return null;
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-white/10">
-      <table className="w-full text-sm">
+    <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
+      <table className="w-full text-sm border-collapse">
         <thead>
-          <tr className="border-b border-white/10 text-left text-xs uppercase tracking-widest text-gray-400">
-            <th className="px-4 py-3">Window</th>
-            <th className="px-4 py-3">Film</th>
-            <th className="px-4 py-3">Timestamps</th>
-            <th className="px-4 py-3 text-center">Song Prob</th>
-            <th className="px-4 py-3 text-center">Action Prob</th>
-            <th className="px-4 py-3">Prediction</th>
-            <th className="px-4 py-3 text-center">Confidence</th>
-            <th className="px-4 py-3 text-center">Correct?</th>
+          <tr style={{ background: "rgba(255,255,255,0.03)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+            {["Win", "Film", "Timestamps", "Song", "Action", "Prediction", "Confidence", "Result"].map((h) => (
+              <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold uppercase tracking-widest text-[#8888AA]">
+                {h}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) => {
+          {rows.map((row, idx) => {
             const meta = LABEL_META[row.predicted_label as PredictedLabel];
             const pct = Math.round(row.confidence * 100);
+            const isLast = idx === rows.length - 1;
             return (
               <tr
                 key={row.window_id}
-                style={{ background: rowBg(row.predicted_label as PredictedLabel) }}
-                className="border-b border-white/5 transition-colors hover:brightness-125"
+                className="group transition-colors"
+                style={{
+                  borderBottom: isLast ? "none" : "1px solid rgba(255,255,255,0.04)",
+                }}
               >
-                <td className="px-4 py-3 font-mono text-gray-300">{row.window_id}</td>
-                <td className="px-4 py-3 font-medium text-white">{row.film}</td>
-                <td className="px-4 py-3 font-mono text-gray-400 text-xs whitespace-nowrap">
-                  {row.window_start} – {row.window_end}
+                <td className="px-5 py-4">
+                  <span className="font-mono text-xs text-[#8888AA]">{row.window_id}</span>
                 </td>
-                <td className="px-4 py-3 text-center font-mono" style={{ color: "#27AE60" }}>
-                  {(row.song_prob * 100).toFixed(1)}%
+                <td className="px-5 py-4">
+                  <span className="font-medium text-white text-sm">{row.film}</span>
                 </td>
-                <td className="px-4 py-3 text-center font-mono" style={{ color: "#E74C3C" }}>
-                  {(row.action_prob * 100).toFixed(1)}%
+                <td className="px-5 py-4">
+                  <span className="font-mono text-xs text-[#8888AA] whitespace-nowrap">
+                    {row.window_start} – {row.window_end}
+                  </span>
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-5 py-4">
+                  <ProbBar value={row.song_prob} color="#22C55E" />
+                </td>
+                <td className="px-5 py-4">
+                  <ProbBar value={row.action_prob} color="#EF4444" />
+                </td>
+                <td className="px-5 py-4">
                   <span
-                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
-                    style={{ background: meta.color + "22", color: meta.color, border: `1px solid ${meta.color}44` }}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
+                    style={{
+                      background: meta.bg,
+                      color: meta.color,
+                      border: `1px solid ${meta.border}`,
+                    }}
                   >
-                    <span>{meta.icon}</span>
+                    <span className="text-base leading-none">{meta.icon}</span>
                     {meta.text}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-center">
-                  <div className="flex items-center gap-1.5 justify-center">
-                    <div className="w-16 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                <td className="px-5 py-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-16 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
                       <div
                         className="h-full rounded-full"
-                        style={{ width: `${pct}%`, background: meta.color }}
+                        style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${meta.color}88, ${meta.color})` }}
                       />
                     </div>
-                    <span className="font-mono text-xs text-gray-300">{pct}%</span>
+                    <span className="font-mono text-xs text-[#8888AA] w-8">{pct}%</span>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-5 py-4">
                   {row.correct === "YES" ? (
-                    <span className="rounded-full px-2.5 py-0.5 text-xs font-bold bg-green-500/20 text-green-400 border border-green-500/30">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-green-500/15 text-green-400 border border-green-500/20">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       YES
                     </span>
                   ) : (
-                    <span className="rounded-full px-2.5 py-0.5 text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-red-500/15 text-red-400 border border-red-500/20">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
                       NO
                     </span>
                   )}

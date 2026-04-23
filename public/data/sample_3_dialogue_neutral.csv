@@ -1,0 +1,19 @@
+window_id,film,window_start,window_end,true_is_song,true_is_action,song_prob,action_prob,predicted_label,confidence,correct
+W107,Pushpa (2021),00:22:12,00:24:12,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W063,KGF Chapter 2 (2022),02:02:13,02:04:24,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W119,Pushpa (2021),00:23:32,00:25:43,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W048,3 Idiots (2009),00:22:53,00:25:11,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W116,RRR (2022),01:39:16,01:41:13,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W021,Pushpa (2021),00:07:13,00:08:57,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W151,Pushpa (2021),00:58:34,01:01:00,0,0,0.0,0.7097,action,0.7097,NO
+W085,Bahubali 2 (2017),00:50:48,00:52:52,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W189,Dangal (2016),01:11:08,01:12:39,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W067,KGF Chapter 2 (2022),00:03:31,00:05:38,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W065,Pushpa (2021),01:02:07,01:04:20,0,0,0.0,0.55,action,0.55,NO
+W032,Dil Bechara (2020),01:29:08,01:31:27,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W170,RRR (2022),00:22:04,00:23:38,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W054,Pushpa (2021),02:32:19,02:34:34,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W006,Pushpa (2021),00:05:48,00:07:34,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W112,Dangal (2016),02:10:06,02:12:16,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W142,Pushpa (2021),00:52:11,00:54:38,0,0,0.0,0.0,dialogue/neither,1.0,YES
+W071,Bahubali 2 (2017),00:26:56,00:29:13,0,0,0.0,0.0,dialogue/neither,1.0,YES

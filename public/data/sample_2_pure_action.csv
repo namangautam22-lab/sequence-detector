@@ -1,0 +1,16 @@
+window_id,film,window_start,window_end,true_is_song,true_is_action,song_prob,action_prob,predicted_label,confidence,correct
+W130,Dil Bechara (2020),02:48:16,02:49:46,0,1,0.0,1.0,action,1.0,YES
+W078,Jawan (2023),01:28:20,01:30:29,0,1,0.0,0.7097,action,0.7097,YES
+W092,KGF Chapter 2 (2022),00:09:15,00:11:36,0,1,0.0,0.9625,action,0.9625,YES
+W182,Dangal (2016),00:58:41,01:00:27,0,1,0.0,0.55,action,0.55,YES
+W149,3 Idiots (2009),02:11:52,02:13:45,0,1,0.0,0.7097,action,0.7097,YES
+W091,Dangal (2016),02:39:30,02:41:24,0,1,0.0,1.0,action,1.0,YES
+W042,RRR (2022),00:05:37,00:07:17,0,1,0.3793,1.0,action,1.0,YES
+W158,3 Idiots (2009),02:45:45,02:47:55,0,1,0.55,1.0,action,1.0,YES
+W009,DDLJ (1995),01:39:30,01:41:50,0,1,0.9594,0.9625,QA_QUEUE,0.9609,NO
+W172,Bahubali 2 (2017),01:17:33,01:19:23,0,1,0.0,0.7097,action,0.7097,YES
+W161,Bahubali 2 (2017),02:37:24,02:38:56,0,1,0.0,0.7097,action,0.7097,YES
+W046,Dil Bechara (2020),02:42:08,02:44:20,0,1,0.0,0.7652,action,0.7652,YES
+W049,RRR (2022),00:49:25,00:51:32,0,1,0.0,0.7652,action,0.7652,YES
+W146,Pushpa (2021),01:47:46,01:50:10,0,1,0.0,0.7652,action,0.7652,YES
+W036,Pushpa (2021),00:52:30,00:54:50,0,1,0.0,0.55,action,0.55,YES

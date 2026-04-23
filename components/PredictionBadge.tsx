@@ -8,29 +8,55 @@ export default function PredictionBadge({ row }: { row: WindowPrediction }) {
 
   return (
     <div
-      className="rounded-xl p-4 flex flex-col gap-2 border"
-      style={{ background: meta.bg, borderColor: meta.color + "44" }}
+      className="rounded-2xl p-4 flex flex-col gap-3 relative overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, ${meta.bg} 0%, rgba(13,13,26,0.6) 100%)`,
+        border: `1px solid ${meta.border}`,
+        backdropFilter: "blur(8px)",
+      }}
     >
-      <div className="flex items-center gap-2">
-        <span className="text-2xl">{meta.icon}</span>
-        <span className="font-bold text-base" style={{ color: meta.color }}>
-          {meta.text}
-        </span>
-        <span className="ml-auto text-xs text-gray-400 font-mono">
-          {row.window_start} – {row.window_end}
-        </span>
+      {/* Subtle glow dot top-right */}
+      <div
+        className="absolute -top-3 -right-3 w-12 h-12 rounded-full opacity-30 blur-xl"
+        style={{ background: meta.color }}
+      />
+
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className="text-xl leading-none">{meta.icon}</span>
+          <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: meta.color }}>
+            {meta.text}
+          </span>
+        </div>
+        {row.correct === "YES" ? (
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/25 shrink-0">
+            ✓
+          </span>
+        ) : (
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/25 shrink-0">
+            ✗
+          </span>
+        )}
       </div>
-      <div className="text-sm text-gray-300 font-medium">{row.film}</div>
-      <div className="flex items-center gap-2">
-        <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
+
+      <div>
+        <div className="text-sm font-semibold text-white leading-snug">{row.film}</div>
+        <div className="text-[11px] text-[#8888AA] mt-0.5 font-mono">
+          {row.window_start} – {row.window_end}
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-1">
+        <div className="flex justify-between items-center">
+          <span className="text-[10px] uppercase tracking-wider text-[#8888AA]">Confidence</span>
+          <span className="text-xs font-bold font-mono" style={{ color: meta.color }}>{pct}%</span>
+        </div>
+        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
           <div
-            className="h-full rounded-full transition-all"
-            style={{ width: `${pct}%`, background: meta.color }}
+            className="h-full rounded-full transition-all duration-500"
+            style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${meta.color}99, ${meta.color})` }}
           />
         </div>
-        <span className="text-xs font-mono" style={{ color: meta.color }}>
-          {pct}%
-        </span>
       </div>
     </div>
   );

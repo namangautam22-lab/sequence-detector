@@ -1,0 +1,67 @@
+[
+  {
+    "window_id": "W01",
+    "film": "DDLJ (1995)",
+    "window_start": "00:41:22",
+    "window_end": "00:45:08",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.0,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W02",
+    "film": "RRR (2022)",
+    "window_start": "01:12:44",
+    "window_end": "01:16:10",
+    "true_is_song": 0,
+    "true_is_action": 1,
+    "song_prob": 0.0,
+    "action_prob": 0.71,
+    "predicted_label": "action",
+    "confidence": 0.71,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W03",
+    "film": "3 Idiots (2009)",
+    "window_start": "01:28:20",
+    "window_end": "01:30:30",
+    "true_is_song": 0,
+    "true_is_action": 0,
+    "song_prob": 0.0,
+    "action_prob": 0.0,
+    "predicted_label": "dialogue/neither",
+    "confidence": 0.0,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W04",
+    "film": "KGF Chapter 2 (2022)",
+    "window_start": "02:55:10",
+    "window_end": "02:58:50",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W05",
+    "film": "Dangal (2016)",
+    "window_start": "01:44:22",
+    "window_end": "01:48:44",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.314,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  }
+]

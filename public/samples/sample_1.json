@@ -1,0 +1,67 @@
+[
+  {
+    "window_id": "W01",
+    "film": "DDLJ (1995)",
+    "window_start": "00:28:14",
+    "window_end": "00:32:41",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.0,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W02",
+    "film": "Dil Bechara (2020)",
+    "window_start": "00:41:10",
+    "window_end": "00:45:22",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.0,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W03",
+    "film": "Kabir Singh (2019)",
+    "window_start": "01:02:33",
+    "window_end": "01:06:55",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.0,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W04",
+    "film": "3 Idiots (2009)",
+    "window_start": "00:15:20",
+    "window_end": "00:19:44",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.314,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W05",
+    "film": "Dangal (2016)",
+    "window_start": "02:05:11",
+    "window_end": "02:09:30",
+    "true_is_song": 1,
+    "true_is_action": 0,
+    "song_prob": 0.959,
+    "action_prob": 0.314,
+    "predicted_label": "song",
+    "confidence": 0.959,
+    "correct": "YES"
+  }
+]

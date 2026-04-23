@@ -1,0 +1,67 @@
+[
+  {
+    "window_id": "W01",
+    "film": "RRR (2022)",
+    "window_start": "02:18:00",
+    "window_end": "02:21:30",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W02",
+    "film": "KGF Chapter 2 (2022)",
+    "window_start": "02:44:10",
+    "window_end": "02:47:50",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W03",
+    "film": "Bahubali 2 (2017)",
+    "window_start": "01:58:22",
+    "window_end": "02:01:55",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W04",
+    "film": "Pushpa (2021)",
+    "window_start": "02:01:44",
+    "window_end": "02:05:20",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  },
+  {
+    "window_id": "W05",
+    "film": "Jawan (2023)",
+    "window_start": "01:44:30",
+    "window_end": "01:48:10",
+    "true_is_song": 1,
+    "true_is_action": 1,
+    "song_prob": 0.959,
+    "action_prob": 0.963,
+    "predicted_label": "QA_QUEUE",
+    "confidence": 0.961,
+    "correct": "YES"
+  }
+]
